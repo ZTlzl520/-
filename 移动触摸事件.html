@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="css/flexible.js"></script>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="header">
+            <div class="del">
+                删除
+            </div>
+        </div>
+        <div class="main">
+            <div class="inner"></div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script src="css/qwe.js"></script>
+    <script>
+        var head = document.querySelector('.header')
+        var del = document.querySelector('.del')
+
+        mtouch.qwe(del, function() {
+            // console.log('dianji')
+            //点击事件的回调函数
+            head.remove()
+        })
+        mtouch.swipper(head, 'left', function() {
+            //点击事件的回调函数
+
+            // console.log('123')
+            del.classList.add('on')
+            del.classList.remove('on1')
+        })
+        mtouch.swipper(head, 'right', function() {
+            del.classList.add('on1')
+            del.classList.remove('on')
+        })
+    </script>
+</body>
+
+</html>

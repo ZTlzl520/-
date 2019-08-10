@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style1.min.css">
+</head>
+
+<body>
+    <div class="big">
+        <ul class="box">
+            <li> <img src='img/1.jpg'> </li>
+            <li><img src='img/2.jpg'></li>
+            <li><img src='img/3.jpg'></li>
+        </ul>
+    </div>
+
+    <script src="css/qwe.js"></script>
+    <!-- <script src="css/velocity.min.js"></script> -->
+    <script>
+        var box = document.querySelector('.box')
+
+        var lisw = box.children[0].offsetWidth
+        var big = document.querySelector('.big')
+            // var clon = box.children[0].cloneNode(true)
+            // box.appendChild(clon)
+
+        // console.log(big)
+        // console.log(lisw)
+        var index = 0
+        mtouch.swipper(big, 'left', function() {
+            index++
+            if (index > box.children.length - 1) {
+                index = 0
+            }
+            box.style.transform = 'translateX(-' + lisw * index + 'px)'
+            box.style.transition = 'transform 1s'
+            console.log(box.children.length)
+                // if (index == box.children.length) {
+                //     box.style.marginLeft = '0px'
+                //     index = 0
+                // }
+
+            // console.log(clon)
+
+            // console.log(index)
+        })
+        mtouch.swipper(big, 'right', function() {
+            index--
+            if (index < 0) {
+                index = box.children.length - 1
+                    // box.style.marginLeft=lisw*
+            }
+            box.style.transform = 'translateX(-' + lisw * index + 'px)'
+            box.style.transition = 'transform 1s'
+                // console.log(box.children.length)
+
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+@function rem($px) {
+    @return $px / 37.5px * 1rem; //把px单位换算成rem单位。 $designWidth ：视觉稿的宽度
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .header {
+        width: 100%;
+        height: rem(50px);
+        background: pink;
+        position: relative;
+        overflow: hidden;
+    }
+    .main {
+        flex: 1;
+        overflow: auto;
+    }
+    .footer {
+        width: 100%;
+        height: rem(60px);
+        background: blue
+    }
+}
+
+.header {
+    .del {
+        position: absolute;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        background: orangered;
+        text-align: center;
+        line-height: rem(50px);
+        font-size: 0.5rem;
+        transform: translateX(100%)
+    }
+}
+
+.main {
+    .inner {
+        width: 100%;
+        height: 2000px;
+    }
+}
+
+.on {
+    animation: tra1 0.5s linear forwards
+}
+
+.on1 {
+    animation: tra2 0.5s linear
+}
+
+@keyframes tra1 {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes tra2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
